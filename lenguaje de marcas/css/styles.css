@@ -1,0 +1,329 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header */
+.header {
+  width: 100%;
+}
+
+.navbar {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  /* Distribuye el espacio entre las zonas */
+  align-items: center;
+}
+
+.navbar-nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  /* Define las 3 zonas */
+}
+
+.navbar-nav .nav-item {
+  display: flex;
+  align-items: center;
+}
+
+/* Estilo de los enlaces */
+.nav-link {
+  color: white;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: aquamarine;
+}
+
+/* Zona central: "Mi Nombre" */
+.navbar-nav .nav-item.center-item {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-nav .nav-item.center-item .nav-link {
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  /* Estilo del nombre */
+}
+
+/* Zona izquierda: "Ja Morant" */
+.navbar-nav .nav-item.left-item {
+  margin-right: auto;
+}
+
+/* Zona derecha: Resto de enlaces */
+.navbar-nav .nav-item.right-item {
+  display: flex;
+  margin-left: 10px;
+  /* Espaciado entre los elementos de la derecha */
+}
+
+/* Main Section */
+.text-center h1,
+.text-center h3 {
+  margin-bottom: 1rem;
+}
+
+.text-center p {
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.row img {
+  border: 2px solid #333;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.row img:hover {
+  transform: scale(1.05);
+  border-color: aquamarine;
+}
+/* Parallax styles */
+.parallax {
+  position: relative;
+  height: 400px;
+  background-image: url('img/basketball-court.png'); /* Reemplaza con tu imagen */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+#parallax-content {
+  transition: opacity 0.5s ease-in-out, transform 1s ease-in-out;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+#parallax-content.hidden {
+  opacity: 0;
+  transform: translateY(-50px);
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .parallax {
+    height: 300px;
+  }
+
+  .parallax-content h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .parallax {
+    height: 400px;
+  }
+
+  .parallax-content h1 {
+    font-size: 2.5rem;
+  }
+}
+
+
+
+/* Footer Estilo Base */
+.footer {
+  background-color: #222;
+  color: white;
+  padding: 20px 15px;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-section {
+  flex: 1 1 30%;
+  /* Tres columnas por defecto */
+  min-width: 200px;
+}
+
+.footer-section h3 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: aquamarine;
+}
+
+.footer-section p,
+.footer-section ul {
+  margin: 5px 0;
+}
+
+.footer-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: aquamarine;
+}
+
+.footer-section .social-icons a {
+  margin-right: 10px;
+}
+
+.footer-section .social-icons img {
+  width: 25px;
+  height: 25px;
+  transition: transform 0.3s ease;
+}
+
+.footer-section .social-icons img:hover {
+  transform: scale(1.2);
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+/* Responsive Styles */
+
+/* Para pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+  .footer-container {
+    flex-direction: column;
+    /* Cambiar a una sola columna */
+    align-items: center;
+  }
+
+  .footer-section {
+    flex: 1 1 100%;
+    /* Ocupa todo el ancho */
+    text-align: center;
+  }
+
+  .footer-section .social-icons img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* Para pantallas medianas (tablets) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .footer-container {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* Espaciado uniforme */
+  }
+
+  .footer-section {
+    flex: 1 1 45%;
+    /* Dos columnas */
+    text-align: left;
+    /* Ajusta alineación */
+  }
+}
+
+/* Para pantallas grandes (escritorio) */
+@media (min-width: 1025px) {
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    /* Máximo espacio entre secciones */
+  }
+
+  .footer-section {
+    text-align: left;
+  }
+
+  .footer-section .social-icons img {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+
+/* Estilo para el parallax */
+.parallax {
+  background-image: url('path_to_image.jpg');
+  height: 500px;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/* Estilo para móviles */
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .item,
+  .body-item {
+    width: 100%;
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+
+  .text {
+    padding-top: 2em;
+    padding-bottom: 2em;
+  }
+}
+
+/* Estilo para tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .container {
+    flex-direction: row;
+  }
+
+  .item,
+  .body-item {
+    width: 48%;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+  }
+}
+
+/* Estilo para pantallas grandes (escritorio) */
+@media (min-width: 1025px) {
+  .container {
+    flex-direction: row;
+  }
+
+  .item,
+  .body-item {
+    width: 30%;
+  }
+}
+
+/* Animación de desvanecimiento */
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

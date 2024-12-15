@@ -1,0 +1,133 @@
+/* Estilo para la galería */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-between;
+  }
+  
+  /* Cada columna en la galería */
+  .gallery .column {
+    flex: 1 1 22%;
+    /* Por defecto, 4 columnas */
+    box-sizing: border-box;
+    padding: 10px;
+  }
+  
+  .gallery .column img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Media Queries para pantallas pequeñas (móviles) */
+  @media (max-width: 600px) {
+  
+    /* Galería: Una columna por fila */
+    .gallery .column {
+      flex: 1 1 100%;
+      padding: 5px;
+    }
+  
+    /* Navbar: Asegura que los enlaces se apilen en móviles */
+    .navbar-nav {
+      flex-direction: column;
+    }
+  
+    /* Centrar "Mi Nombre" */
+    .navbar-nav .nav-item.center-item {
+      order: 0;
+      /* Coloca el nombre en la parte superior si es necesario */
+    }
+  
+    /* Títulos */
+    .text-center h1 {
+      font-size: 1.5rem;
+    }
+  
+    .text-center h3 {
+      font-size: 1rem;
+    }
+  
+    /* Ajustes para la sección del contenido */
+    .content {
+      padding: 15px;
+    }
+  }
+  
+  /* Media Queries para pantallas medianas (tabletas) */
+  @media (min-width: 601px) and (max-width: 1024px) {
+  
+    /* Galería: 2 columnas por fila */
+    .gallery .column {
+      flex: 1 1 45%;
+      /* 2 columnas por fila */
+      padding: 10px;
+    }
+  
+    /* Navbar: Elementos en una fila */
+    .navbar-nav {
+      flex-direction: row;
+    }
+  
+    /* Ajustar el orden de "Mi Nombre" */
+    .navbar-nav .nav-item.center-item {
+      order: 1;
+      /* Coloca el nombre en el centro */
+    }
+  
+    /* Convertir la zona derecha en un menú hamburguesa */
+    .navbar-nav .nav-item.right-item {
+      display: none;
+      /* Esconde los elementos de la derecha */
+    }
+  
+    .navbar-nav .nav-item.hamburger {
+      display: block;
+      cursor: pointer;
+    }
+  
+    /* Títulos */
+    .text-center h1 {
+      font-size: 2rem;
+    }
+  
+    .text-center h3 {
+      font-size: 1.25rem;
+    }
+  
+    /* Ajustes para la sección del contenido */
+    .content {
+      padding: 20px;
+    }
+  }
+  
+  /* Media Queries para pantallas grandes (escritorio) */
+  @media (min-width: 1025px) {
+  
+    /* Galería: 4 columnas por fila */
+    .gallery .column {
+      flex: 1 1 22%;
+      /* 4 columnas por fila */
+    }
+  
+    /* Navbar: Elementos en una fila */
+    .navbar-nav {
+      flex-direction: row;
+    }
+  
+    /* Títulos */
+    .text-center h1 {
+      font-size: 2.5rem;
+    }
+  
+    .text-center h3 {
+      font-size: 1.5rem;
+    }
+  
+    /* Ajustes para la sección del contenido */
+    .content {
+      padding: 25px;
+    }
+  }
